@@ -217,6 +217,7 @@
                         <outlet property="mass" destination="9Ac-wn-rS6" id="yMz-6Q-bif"/>
                         <outlet property="moles" destination="fIf-cH-A20" id="fGm-F8-IyZ"/>
                         <outlet property="molwt" destination="5zU-1l-XQJ" id="O9Q-Hr-2sh"/>
+                        <outlet property="segcontrol" destination="o7J-Wh-Epa" id="mbW-qp-cW7"/>
                         <outlet property="tempF" destination="oXU-LM-7XW" id="IgG-F4-6eq"/>
                         <outlet property="tempR" destination="zlN-eI-TWn" id="PQi-ei-vB0"/>
                         <outlet property="volume" destination="qiK-Ui-YYm" id="Xkf-VC-QnQ"/>
