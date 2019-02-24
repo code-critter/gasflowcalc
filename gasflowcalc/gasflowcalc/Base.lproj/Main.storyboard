@@ -187,7 +187,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o7J-Wh-Epa">
-                                <rect key="frame" x="25" y="556" width="343" height="29"/>
+                                <rect key="frame" x="18" y="556" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="P"/>
@@ -195,7 +195,17 @@
                                     <segment title="Mol"/>
                                     <segment title="Temp"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segcontrolvaluechanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="LOO-9e-AjV"/>
+                                </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find Variable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLR-YZ-meS">
+                                <rect key="frame" x="114" y="608" width="180" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -203,6 +213,7 @@
                     <connections>
                         <outlet property="PSIA" destination="SRC-a9-vh4" id="hUs-3I-hkv"/>
                         <outlet property="PSIG" destination="CwO-6E-1dW" id="mnx-IK-xQt"/>
+                        <outlet property="findLabel" destination="NLR-YZ-meS" id="OI5-Ty-LsW"/>
                         <outlet property="mass" destination="9Ac-wn-rS6" id="yMz-6Q-bif"/>
                         <outlet property="moles" destination="fIf-cH-A20" id="fGm-F8-IyZ"/>
                         <outlet property="molwt" destination="5zU-1l-XQJ" id="O9Q-Hr-2sh"/>
@@ -213,6 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="25.637181409295355"/>
         </scene>
     </scenes>
 </document>
