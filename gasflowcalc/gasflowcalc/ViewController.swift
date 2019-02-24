@@ -46,31 +46,32 @@ class ViewController: UIViewController {
             default:
                 break
         }
+        self.runCalc()
     }
     
     func updateValues(){
         
-        PSIG.text = String(PG)
+        PSIG.text = String(P - 14.7)
         PSIA.text = String(P)
         volume.text = String(V)
         moles.text = String(N)
         molwt.text = String(MW)
-        mass.text = String(M)
+        mass.text = String(MW * N)
         tempR.text = String(T)
-        tempF.text = String(T-459.67)
+        tempF.text = String(T - 459.67)
         
     }
     
     func getValues(){
         
-        PG = Double(PSIG.text)
-        P = Double(PSIA.text)
-        V = Double(volume.text)
-        N = Double(moles.text)
-        MW = Double(molwt.text)
-        M = Double(mass.text)
-        T = Double(tempR.text)
-        TF = Double(tempF.text)
+        PG = Double(PSIG.text!) ?? 0
+        P = Double(PSIA.text!) ?? 0
+        V = Double(volume.text!) ?? 0
+        N = Double(moles.text!) ?? 0
+        MW = Double(molwt.text!) ?? 0
+        M = Double(mass.text!) ?? 0
+        T = Double(tempR.text!) ?? 0
+        TF = Double(tempF.text!) ?? 0
         
     }
     
@@ -95,24 +96,81 @@ class ViewController: UIViewController {
     }
     
     func findP() {
+        self.getValues()
         
-        
+        if V != 0 {
+            
+            P = (N*R*T) / V
+            self.updateValues()
+            
+        } else {
+            
+            PSIA.text = "???"
+            PSIG.text = "???"
+
+        }
     }
     
     func findV() {
-        
+        self.getValues()
+        if P != 0 {
+            
+            V = (N*R*T) / P
+            self.updateValues()
+            
+        } else {
+            
+            volume.text = "???"
+            
+        }
     }
     
-    func findM() {
-        
+    func findN() {
+        self.getValues()
+        if T != 0 {
+            
+            N = (P*V)/(R*T)
+            self.updateValues()
+            
+        } else {
+            
+            moles.text = "???"
+            
+        }
     }
     
     func findT() {
-        
+        self.getValues()
+        if N != 0 {
+            
+            T = (P*V)/(R*N)
+            self.updateValues()
+            
+        } else {
+            
+            tempR.text = "???"
+            tempF.text = "???"
+        }
     
     }
     
     func runCalc() {
+        switch segcontrol.selectedSegmentIndex {
+        case 0:
+            //findLabel.text = "Find Pressure"
+            self.findP()
+        case 1:
+            //findLabel.text = "Find Volume"
+            self.findV()
+        case 2:
+            //findLabel.text = "Find Moles"
+            self.findN()
+        case 3:
+            //findLabel.text = "Find Temperature"
+            self.findT()
+        default:
+            break
+        }
         
     }
 
