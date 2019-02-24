@@ -10,9 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var PSIG: UITextField!
+    
+    @IBOutlet weak var PSIA: UITextField!
+    
+    @IBOutlet weak var volume: UITextField!
+    
+    @IBOutlet weak var moles: UITextField!
+    
+    @IBOutlet weak var molwt: UITextField!
+    
+    @IBOutlet weak var mass: UITextField!
+    
+    @IBOutlet weak var tempR: UITextField!
+    
+    @IBOutlet weak var tempF: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        PSIG.text = "0"
+        
+        //PSIA.text = String(Float?(PSIG.text)+14.7)
+        
+        
+        
+
     }
 
 
